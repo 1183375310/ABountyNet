@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.abounty.dao.SysUserMapper">
+    <resultMap id="BaseResultMap" type="com.example.abounty.domain.SysUser">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+    </resultMap>
+    <sql id="mappingColumns">
+        id as id,
+        name as name,
+        age as age
+    </sql>
+    <select id="getUserById" resultMap="BaseResultMap">
+      SELECT
+        <include refid="mappingColumns"/>
+      FROM SYSUSER
+        <where>
+          id = #{id,jdbcType=NUMERIC}
+        </where>
+    </select>
+</mapper>
