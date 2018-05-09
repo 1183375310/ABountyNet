@@ -44,6 +44,10 @@ public class SysUser {
      * 常用地址
      */
     private String usedAddress;
+    /**
+     * 是否能够删除
+     */
+    private boolean isDelete;
 
     public int getId() {
         return id;
@@ -123,5 +127,13 @@ public class SysUser {
 
     public void setUsedAddress(String usedAddress) {
         this.usedAddress = usedAddress;
+    }
+
+    public boolean isDelete() {
+        return isDelete;
+    }
+
+    public void setDelete(boolean delete) {
+        isDelete = delete;
     }
 }
